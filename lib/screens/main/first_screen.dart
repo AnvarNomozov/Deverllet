@@ -1,3 +1,4 @@
+import 'package:awesome_card/awesome_card.dart';
 import 'package:examin/core/colors.dart';
 import 'package:examin/user_data/card_data.dart';
 import 'package:flutter/material.dart';
@@ -42,17 +43,23 @@ class _MainScreenState extends State<MainScreen> {
                   itemCount: cardlist.length,
                   controller: _controller,
                   itemBuilder: (context, index) => InkWell(
-                    child: CreditCardWidget(
+                    child: CreditCard(
                       cardNumber: cardlist[index]['cardNumber'].toString(),
-                      expiryDate: cardlist[index]["date"].toString(),
+                      cardExpiry: cardlist[index]["date"].toString(),
                       cardHolderName: cardlist[index]["cardHolder"].toString(),
-                      cvvCode: cardlist[index]["cvv"].toString(),
-                      showBackView: false,
-                      onCreditCardWidgetChange: (CreditCardBrand
-                          Mastercard) async {}, //true when you want to show cvv(back) view
+                      cvv: cardlist[index]["cvvCode"].toString(),
+                      bankName: cardlist[index]["bank"],
+                      showBackSide: false,
+                      frontBackground: CardBackgrounds.black,
+                      backBackground: CardBackgrounds.white,
+                      showShadow: true,
+                      textExpDate: 'Exp. Date',
+                      textName: 'Anvar',
+                      textExpiry: 'MM/YY',
                     ),
                     onTap: () {
-                      Navigator.pushNamed(context, "/seconscreen",arguments: index);
+                      Navigator.pushNamed(context, "/seconscreen",
+                          arguments: index);
                     },
                   ),
                 ),

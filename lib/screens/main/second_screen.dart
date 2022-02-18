@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'package:awesome_card/awesome_card.dart';
 import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:examin/user_data/card_data.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +8,7 @@ import 'package:flutter_credit_card/flutter_credit_card.dart';
 
 class SecondSceen extends StatefulWidget {
   final int index;
-  const SecondSceen({Key? key ,required this.index}) : super(key: key);
+  const SecondSceen({Key? key, required this.index}) : super(key: key);
 
   @override
   _SecondSceenState createState() => _SecondSceenState();
@@ -47,14 +47,20 @@ class _SecondSceenState extends State<SecondSceen> {
               25.0,
               FontWeight.bold,
             ),
-            CreditCardWidget(
-              cardNumber: cardlist[widget.index]['cardNumber'],
-              expiryDate: "10/20",
-              cardHolderName: "Anvar Nomozov",
-              cvvCode: "123",
-              showBackView: false,
-              onCreditCardWidgetChange: (CreditCardBrand Mastercard) async {},
-            ),
+            CreditCard(
+                      cardNumber: cardlist[widget.index]['cardNumber'].toString(),
+                      cardExpiry: cardlist[widget.index]["date"].toString(),
+                      cardHolderName: cardlist[widget.index]["cardHolder"].toString(),
+                      cvv: cardlist[widget.index]["cvvCode"].toString(),
+                      bankName: cardlist[widget.index]["bank"],
+                      showBackSide: false,
+                      frontBackground: CardBackgrounds.black,
+                      backBackground: CardBackgrounds.white,
+                      showShadow: true,
+                      textExpDate: 'Exp. Date',
+                      textName: 'Anvar',
+                      textExpiry: 'MM/YY',
+                    ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 21),
               child: Column(
