@@ -123,12 +123,56 @@ class _SingUpState extends State<SingUp> {
                           }
                         },
                       ),
+                      SizedBox(
+                        height: 30,
+                      ),
                       ElevatedButton(
-                        style:
-                            ElevatedButton.styleFrom(primary: Colors.blue),
-                        child:const Text("Sign Up"),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blue,
+                          fixedSize: Size(278, 67),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                        ),
+                        child: const Text("Register"),
                         onPressed: _onPressed,
-                      )
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _circleContainer(
+                            Icon(
+                              Icons.facebook,
+                              size: 55,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 17,
+                          ),
+                          _circleContainer(
+                            Icon(
+                              Icons.panorama_wide_angle_select_rounded,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 17,
+                          ),
+                          _circleContainer(
+                            Icon(
+                              Icons.panorama_wide_angle_select_rounded,
+                            ),
+                          ),
+                        ],
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/login");
+                        },
+                        child: Text("Already have an account?, Login"),
+                      ),
                     ],
                   ),
                 ),
@@ -137,6 +181,19 @@ class _SingUpState extends State<SingUp> {
           ],
         ),
       ),
+    );
+  }
+
+  Container _circleContainer(icon) {
+    return Container(
+      height: 55,
+      width: 55,
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        border: Border.all(color: Colors.white),
+        borderRadius: BorderRadius.circular(100),
+      ),
+      child: icon,
     );
   }
 
@@ -160,7 +217,7 @@ class _SingUpState extends State<SingUp> {
       }
       if (isTrue == false) {
         ScaffoldMessenger.of(context).showSnackBar(
-        const  SnackBar(
+          const SnackBar(
             dismissDirection: DismissDirection.horizontal,
             backgroundColor: Colors.redAccent,
             content: Text("This email address already has signed in"),

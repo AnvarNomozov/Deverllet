@@ -3,7 +3,6 @@ import 'package:examin/screens/auth/singup.dart';
 import 'package:examin/screens/main/first_screen.dart';
 import 'package:examin/screens/main/second_screen.dart';
 import 'package:examin/screens/splash/splash.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyRoute {

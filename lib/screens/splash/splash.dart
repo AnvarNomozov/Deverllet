@@ -17,7 +17,7 @@ class SplashScreen extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(top: 20),
+            padding: EdgeInsets.only(top: 35),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -40,9 +40,9 @@ class SplashScreen extends StatelessWidget {
           ),
           Center(
             child: Container(
-              padding: EdgeInsets.only(top: 50),
-              child: _text("""  Pay Bill And 
-Transfer Funds""", Colors.white, 30.0),
+              padding: EdgeInsets.only(top: 150),
+              child: _text("""  Pay  Bill  And 
+Transfer  Funds""", Colors.white, 30.0),
             ),
           )
         ],
