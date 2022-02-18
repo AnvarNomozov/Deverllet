@@ -44,6 +44,7 @@ class _SecondSceenState extends State<SecondSceen> {
               25.0,
               FontWeight.bold,
             ),
+            _size(20.0),
             CreditCard(
               cardNumber: cardlist[widget.index]['cardNumber'].toString(),
               cardExpiry: cardlist[widget.index]["date"].toString(),
@@ -58,6 +59,7 @@ class _SecondSceenState extends State<SecondSceen> {
               textName: 'Anvar',
               textExpiry: 'MM/YY',
             ),
+            _size(20.0),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 21),
               child: Column(
@@ -99,7 +101,7 @@ class _SecondSceenState extends State<SecondSceen> {
                           height: 10,
                         ),
                         _second("    Pickle jar", "                  x2",
-                            "]\$8.15    "),
+                            "\$8.15    "),
                         SizedBox(
                           height: 10,
                         ),
@@ -109,9 +111,58 @@ class _SecondSceenState extends State<SecondSceen> {
                     ),
                   ),
                   _liner(),
-                  Container(
-                    height: 166,
-                    color: Colors.green,
+                  _size(20.0),
+                  SizedBox(
+                    height: 250,
+                    
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 270),
+                          child: _text(
+                            "Pyment",
+                            Color(0xff707070),
+                            14.0,
+                            FontWeight.normal,
+                          ),
+                        ),
+                        _size(20.0),
+                        _row2('     Items free', "\$ 64.89   "),
+                        _size(10.0),
+                        _row2(
+                          "     V.A.T",
+                          "\$ 1.64   ",
+                        ),
+                        _size(10.0),
+                        _row2("     TOTAL", "\$ 66.63   "),
+                        _size(10.0),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 200),
+                          child: _text(
+                            "23/03/2020 -  9:18pm",
+                            Color(0xff316396),
+                            14.0,
+                            FontWeight.normal,
+                          ),
+                        ),
+                        _size(20.0),
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: _text(
+                            "CONTINUE",
+                            Colors.white,
+                            18.0,
+                            FontWeight.normal,
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Color(0xff31BBC5),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(100)),
+                            fixedSize: Size(278, 67),
+                          ),
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ),
@@ -121,6 +172,31 @@ class _SecondSceenState extends State<SecondSceen> {
       ),
     );
   }
+
+  Row _row2(text1, text2) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        _text(text1, Color(0xffA5A5A5), 14.0, FontWeight.normal),
+        _text(text2, Colors.black, 14.0, FontWeight.normal)
+      ],
+    );
+  } /*Row _row2() {
+    return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          _text('     Items free', Color(0xffA5A5A5), 14.0,
+                              FontWeight.normal),
+                          _text("\$ 64.89   ", Colors.black, 14.0,
+                              FontWeight.normal)
+                        ],
+                      );
+  }
+ */
+
+  SizedBox _size(height) => SizedBox(
+        height: height,
+      );
 
   Row _second(text1, text2, text3) {
     return Row(
@@ -207,7 +283,7 @@ class _SecondSceenState extends State<SecondSceen> {
               FontWeight.normal,
             ),
             _text(
-              "John Stewart      ",
+              cardlist[widget.index]["cardHolder"],
               Colors.black,
               14.0,
               FontWeight.normal,
