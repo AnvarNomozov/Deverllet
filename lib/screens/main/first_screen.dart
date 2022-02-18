@@ -241,13 +241,34 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             )),
                       ),
-                    ),_sizebox(20.0),
-                    Image.asset("assets/img/opacha.png")
+                    ),
+                    _sizebox(20.0),
+                    Image.asset("assets/img/opacha.png"),
                   ],
                 ),
-              )
+              ),
             ],
           ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_wallet_outlined),
+              label: 'wallet',
+            ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.pending_outlined),
+            //   label: 'Savings',
+            // ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.payment),
+              label: 'Payments',
+            ),
+          ],
         ),
       ),
     );

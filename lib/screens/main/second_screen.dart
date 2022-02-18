@@ -114,7 +114,6 @@ class _SecondSceenState extends State<SecondSceen> {
                   _size(20.0),
                   SizedBox(
                     height: 250,
-                    
                     child: Column(
                       children: [
                         Padding(
@@ -147,7 +146,9 @@ class _SecondSceenState extends State<SecondSceen> {
                         ),
                         _size(20.0),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            _showMyDialog();
+                          },
                           child: _text(
                             "CONTINUE",
                             Colors.white,
@@ -173,6 +174,32 @@ class _SecondSceenState extends State<SecondSceen> {
     );
   }
 
+  Future<void> _showMyDialog() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: const <Widget>[
+                Center(child: CircularProgressIndicator(),)
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Close'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   Row _row2(text1, text2) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -181,18 +208,8 @@ class _SecondSceenState extends State<SecondSceen> {
         _text(text2, Colors.black, 14.0, FontWeight.normal)
       ],
     );
-  } /*Row _row2() {
-    return Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          _text('     Items free', Color(0xffA5A5A5), 14.0,
-                              FontWeight.normal),
-                          _text("\$ 64.89   ", Colors.black, 14.0,
-                              FontWeight.normal)
-                        ],
-                      );
   }
- */
+  
 
   SizedBox _size(height) => SizedBox(
         height: height,

@@ -16,7 +16,7 @@ MyRoute _route = MyRoute();
          primarySwatch: Colors.blue,
       ),
       onGenerateRoute: _route.onGenerateRoute,
-    initialRoute: "/MainScreen",
+    initialRoute: "/",
     );
   }
 }
