@@ -39,8 +39,9 @@ class Splash4 extends StatelessWidget {
               padding: EdgeInsets.only(top: 150),
               child: _text("""Save Money""", Colors.white, 30.0),
             ),
-          ),Padding(
-            padding: const EdgeInsets.only(left: 200, top: 550),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 200, top: 500),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
@@ -51,9 +52,34 @@ class Splash4 extends StatelessWidget {
                 fixedSize: Size(200, 70),
               ),
               onPressed: () {
-                Navigator.pushNamed(context, "/singup");
+                Navigator.pushNamedAndRemoveUntil(
+                    context, "/singup", (route) => false);
               },
-              child: Text("Register"),
+              child: Text(
+                "Register",
+                style: TextStyle(fontSize: 25),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 200, top: 600),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.horizontal(
+                      left: Radius.circular(100),
+                    ),
+                  ),
+                  fixedSize: Size(200, 70),
+                  primary: Colors.white),
+              onPressed: () {
+                Navigator.pushNamedAndRemoveUntil(
+                    context, "/login", (route) => false);
+              },
+              child: Text(
+                "LogIn",
+                style: TextStyle(fontSize: 25, color: Color(0xff31BBC5)),
+              ),
             ),
           )
         ],

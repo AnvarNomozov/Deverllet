@@ -31,7 +31,7 @@ class Splash3 extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.popAndPushNamed(context, "/singup");
+                    Navigator.popAndPushNamed(context, "/splash4");
                   },
                   child: _text("Skip", Colors.white, 20.0),
                 ),
