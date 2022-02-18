@@ -56,7 +56,7 @@ Transfer  Funds""", Colors.white, 30.0),
               onPressed: () {
                 Navigator.pushNamed(context, "/splash3");
               },
-              child: Text("Next"),
+              child: Text("Next",style: TextStyle(fontSize: 25),),
             ),
           )
         ],

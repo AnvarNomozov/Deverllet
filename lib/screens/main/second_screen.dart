@@ -113,7 +113,7 @@ class _SecondSceenState extends State<SecondSceen> {
                   _liner(),
                   _size(20.0),
                   SizedBox(
-                    height: 250,
+                    height: 450,
                     child: Column(
                       children: [
                         Padding(
@@ -161,7 +161,10 @@ class _SecondSceenState extends State<SecondSceen> {
                                 borderRadius: BorderRadius.circular(100)),
                             fixedSize: Size(278, 67),
                           ),
-                        ),
+                        ),_size(20.0),
+                        Container(
+                          child: Image.asset("assets/img/soat.png"),
+                        )
                       ],
                     ),
                   )
@@ -183,7 +186,9 @@ class _SecondSceenState extends State<SecondSceen> {
           content: SingleChildScrollView(
             child: ListBody(
               children: const <Widget>[
-                Center(child: CircularProgressIndicator(),)
+                Center(
+                  child: CircularProgressIndicator(),
+                )
               ],
             ),
           ),
@@ -209,7 +214,6 @@ class _SecondSceenState extends State<SecondSceen> {
       ],
     );
   }
-  
 
   SizedBox _size(height) => SizedBox(
         height: height,

@@ -41,7 +41,7 @@ class Splash4 extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 200, top: 500),
+            padding: const EdgeInsets.only(left: 200, top: 550),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
@@ -62,7 +62,7 @@ class Splash4 extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 200, top: 600),
+            padding: const EdgeInsets.only(left: 200, top: 650),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(

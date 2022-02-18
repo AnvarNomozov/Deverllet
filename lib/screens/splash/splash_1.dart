@@ -51,7 +51,7 @@ class Splash1 extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, "/splash2");
               },
-              child: Text("Next"),
+              child: Text("Next",style: TextStyle(fontSize: 25),),
             ),
           )
         ],
