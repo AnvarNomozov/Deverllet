@@ -1,5 +1,7 @@
 import 'package:examin/core/colors.dart';
+import 'package:examin/user_data/card_data.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_credit_card/credit_card_brand.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 
 class MainScreen extends StatefulWidget {
@@ -32,13 +34,25 @@ class _MainScreenState extends State<MainScreen> {
                   )
                 ],
               ),
-          CreditCardWidget(
-        cardNumber: "12345678910112345",
-        expiryDate: "10/20", 
-        cardHolderName: "cardHolderName",
-        cvvCode: "233",
-        showBackView: false, onCreditCardWidgetChange: (CreditCardBrand ) {  }, //true when you want to show cvv(back) view
-    ),
+              Container(
+                height: 250,
+                child: PageView.builder(itemCount: cardlist.length,
+                  itemBuilder: (context, index) => InkWell(
+                    child: CreditCardWidget(
+                      cardNumber: cardlist[index]['cardNumber'].toString(),
+                      expiryDate: cardlist[index]["date"].toString(),
+                      cardHolderName: cardlist[index]["cardHolder"].toString(),
+                      cvvCode: cardlist[index]["cvv"].toString(),
+                      showBackView: false,
+                      onCreditCardWidgetChange: (CreditCardBrand
+                          Mastercard) async {}, //true when you want to show cvv(back) view
+                    ),
+                    onTap: (){
+
+                    },
+                  ),
+                ),
+              )
             ],
           ),
         ),
