@@ -68,7 +68,9 @@ class _SingUpState extends State<LogIn> {
                         decoration: __decoration(
                           "Email Adress",
                           "Email",
+                          
                           const Icon(Icons.email_outlined),
+                          
                         ),
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -181,6 +183,8 @@ class _SingUpState extends State<LogIn> {
     return InputDecoration(
       hintText: hinttext,
       labelText: labeltext,
+      filled: true,
+        fillColor: ConstColor.white,
       suffixIcon: suffixicon,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),

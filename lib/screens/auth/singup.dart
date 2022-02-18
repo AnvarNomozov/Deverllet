@@ -227,6 +227,8 @@ class _SingUpState extends State<SingUp> {
         hintText: hinttext,
         labelText: labeltext,
         suffixIcon: suffixicon,
+        filled: true,
+        fillColor: ConstColor.white,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),
