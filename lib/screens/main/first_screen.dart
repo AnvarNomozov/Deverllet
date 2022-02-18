@@ -2,8 +2,6 @@ import 'package:awesome_card/awesome_card.dart';
 import 'package:examin/core/colors.dart';
 import 'package:examin/user_data/card_data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_credit_card/credit_card_brand.dart';
-import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:page_view_sliding_indicator/page_view_sliding_indicator.dart';
 
 class MainScreen extends StatefulWidget {
@@ -37,6 +35,7 @@ class _MainScreenState extends State<MainScreen> {
                   )
                 ],
               ),
+              // cardlist[index]["cardType"]
               SizedBox(
                 height: 250,
                 child: PageView.builder(
@@ -44,6 +43,7 @@ class _MainScreenState extends State<MainScreen> {
                   controller: _controller,
                   itemBuilder: (context, index) => InkWell(
                     child: CreditCard(
+                      cardType: cardlist[index]["cardType"],
                       cardNumber: cardlist[index]['cardNumber'].toString(),
                       cardExpiry: cardlist[index]["date"].toString(),
                       cardHolderName: cardlist[index]["cardHolder"].toString(),
