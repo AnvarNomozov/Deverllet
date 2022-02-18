@@ -1,6 +1,7 @@
 import 'package:examin/core/colors.dart';
 import 'package:examin/core/fontsize.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../model/user_model.dart';
 import '../../user_data/user_data.dart';
@@ -144,26 +145,19 @@ class _SingUpState extends State<SingUp> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           _circleContainer(
-                            Icon(
-                              Icons.facebook,
-                              size: 55,
-                            ),
+                            SvgPicture.asset("assets/icon/Path1.svg")
                           ),
                           SizedBox(
                             width: 17,
                           ),
                           _circleContainer(
-                            Icon(
-                              Icons.panorama_wide_angle_select_rounded,
-                            ),
+                            SvgPicture.asset("assets/icon/Path2.svg")
                           ),
                           SizedBox(
                             width: 17,
                           ),
                           _circleContainer(
-                            Icon(
-                              Icons.panorama_wide_angle_select_rounded,
-                            ),
+                            SvgPicture.asset("assets/icon/Path51.svg")
                           ),
                         ],
                       ),

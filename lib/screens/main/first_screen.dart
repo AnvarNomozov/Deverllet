@@ -35,7 +35,6 @@ class _MainScreenState extends State<MainScreen> {
                   )
                 ],
               ),
-              // cardlist[index]["cardType"]
               SizedBox(
                 height: 250,
                 child: PageView.builder(

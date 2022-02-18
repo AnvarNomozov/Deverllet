@@ -1,6 +1,7 @@
 import 'package:examin/core/colors.dart';
 import 'package:examin/core/fontsize.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../model/user_model.dart';
 import '../../user_data/user_data.dart';
@@ -134,26 +135,19 @@ class _SingUpState extends State<LogIn> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           _circleContainer(
-                            Icon(
-                              Icons.facebook,
-                              size: 55,
-                            ),
+                            SvgPicture.asset("assets/icon/Path1.svg")
                           ),
                           SizedBox(
                             width: 17,
                           ),
                           _circleContainer(
-                            Icon(
-                              Icons.panorama_wide_angle_select_rounded,
-                            ),
+                            SvgPicture.asset("assets/icon/Path2.svg")
                           ),
                           SizedBox(
                             width: 17,
                           ),
                           _circleContainer(
-                            Icon(
-                              Icons.panorama_wide_angle_select_rounded,
-                            ),
+                            SvgPicture.asset("assets/icon/Path51.svg")
                           ),
                         ],
                       ),
@@ -174,7 +168,14 @@ class _SingUpState extends State<LogIn> {
     );
   }
 
-  Text _text(text,size,color,fontWeight) => Text(text, style: TextStyle(fontSize: size,color: color,fontWeight:fontWeight),);
+  Text _text(text, size, color, fontWeight) => Text(
+        text,
+        style: TextStyle(
+          fontSize: size,
+          color: color,
+          fontWeight: fontWeight,
+        ),
+      );
 
   InputDecoration __decoration(hinttext, labeltext, suffixicon) {
     return InputDecoration(
@@ -207,7 +208,8 @@ class _SingUpState extends State<LogIn> {
     if (_formKey.currentState!.validate()) {
       for (User user in UserData.UserList) {
         if (email == user.email && password == user.password) {
-          Navigator.pushNamedAndRemoveUntil(context, "/MainScreen", (route) => false);
+          Navigator.pushNamedAndRemoveUntil(
+              context, "/MainScreen", (route) => false);
           return true;
         }
       }
@@ -230,8 +232,6 @@ class _SingUpState extends State<LogIn> {
             borderRadius: BorderRadius.circular(10),
           ),
         );
-
-    
   }
 
   // _text(String s, double bigFont, Color white, FontWeight bold) {}
