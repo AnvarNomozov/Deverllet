@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+class Splash2 extends StatelessWidget {
+  const Splash2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class SplashScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {Navigator.pop(context);},
                   icon: const Icon(
                     Icons.chevron_left_outlined,
                     color: Colors.white,
@@ -43,6 +43,20 @@ class SplashScreen extends StatelessWidget {
               padding: EdgeInsets.only(top: 150),
               child: _text("""  Pay  Bill  And 
 Transfer  Funds""", Colors.white, 30.0),
+            ),
+          ),Padding(
+            padding: const EdgeInsets.only(left: 200, top: 600),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.horizontal(left: Radius.circular(100))),
+                fixedSize: Size(200, 70),
+              ),
+              onPressed: () {
+                Navigator.pushNamed(context, "/splash3");
+              },
+              child: Text("Next"),
             ),
           )
         ],
