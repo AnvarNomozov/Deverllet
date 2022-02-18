@@ -55,6 +55,7 @@ class _SingUpState extends State<SingUp> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 24.0, right: 24.0),
                 child: Form(
+                  key: _formKey,
                   child: Column(
                     children: [
                       TextFormField(
@@ -104,7 +105,6 @@ class _SingUpState extends State<SingUp> {
                           "Password",
                           IconButton(
                             onPressed: () {
-                              print("Bosildi");
                               setState(
                                 () {
                                   _isShow = !_isShow;
@@ -125,7 +125,7 @@ class _SingUpState extends State<SingUp> {
                       ),
                       ElevatedButton(
                         style:
-                            ElevatedButton.styleFrom(primary: ConstColor.white),
+                            ElevatedButton.styleFrom(primary: Colors.blue),
                         child:const Text("Sign Up"),
                         onPressed: _onPressed,
                       )
