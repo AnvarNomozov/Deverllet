@@ -50,6 +50,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  dotted_decoration:
+    dependency: "direct main"
+    description:
+      name: dotted_decoration
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   fake_async:
     dependency: transitive
     description:
@@ -69,6 +76,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.1"
+  flutter_hooks:
+    dependency: transitive
+    description:
+      name: flutter_hooks
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.16.0"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -109,6 +123,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.0"
+  page_view_sliding_indicator:
+    dependency: "direct main"
+    description:
+      name: page_view_sliding_indicator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   path:
     dependency: transitive
     description:
@@ -179,3 +200,4 @@ packages:
     version: "2.1.1"
 sdks:
   dart: ">=2.16.0 <3.0.0"
+  flutter: ">=1.20.0"

@@ -3,6 +3,7 @@ import 'package:examin/user_data/card_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/credit_card_brand.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
+import 'package:page_view_sliding_indicator/page_view_sliding_indicator.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  PageController _controller = PageController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -34,9 +36,11 @@ class _MainScreenState extends State<MainScreen> {
                   )
                 ],
               ),
-              Container(
+              SizedBox(
                 height: 250,
-                child: PageView.builder(itemCount: cardlist.length,
+                child: PageView.builder(
+                  itemCount: cardlist.length,
+                  controller: _controller,
                   itemBuilder: (context, index) => InkWell(
                     child: CreditCardWidget(
                       cardNumber: cardlist[index]['cardNumber'].toString(),
@@ -47,12 +51,29 @@ class _MainScreenState extends State<MainScreen> {
                       onCreditCardWidgetChange: (CreditCardBrand
                           Mastercard) async {}, //true when you want to show cvv(back) view
                     ),
-                    onTap: (){
-
+                    onTap: () {
+                      Navigator.pushNamed(context, "/seconscreen",arguments: index);
                     },
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 16,
+                child: PageViewSlidingIndicator(
+                  color: Colors.green,
+                  controller: _controller,
+                  pageCount: 5,
+                  size: 10,
+                  borderRadius: 8,
+                ),
+              ),
+              _text(
+                "Hold your phone near the terminal",
+                Color(0xFFB7B7B7),
+                12.0,
+                FontWeight.normal,
+              ),
+              // _text(text, color, size, fontwight)
             ],
           ),
         ),

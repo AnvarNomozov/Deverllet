@@ -18,7 +18,7 @@ class MyRoute {
         case "/MainScreen":
         return MaterialPageRoute(builder: (_) => MainScreen());
         case "/seconscreen":
-        return MaterialPageRoute(builder: (_) => SecondSceen());
+        return MaterialPageRoute(builder: (_) => SecondSceen(index: (args as int),));
     }
 
   }
