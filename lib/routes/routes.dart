@@ -22,6 +22,5 @@ class MyRoute {
         return MaterialPageRoute(builder: (_) => SecondSceen());
     }
 
-    //
   }
 }
