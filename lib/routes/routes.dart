@@ -10,7 +10,7 @@ class MyRoute {
   Route? onGenerateRoute(RouteSettings s) {
     var args = s.arguments;
     switch (s.name) {
-      case "/splash":
+      case "/":
         return MaterialPageRoute(builder: (_) => SplashScreen());
       case "/login":
         return MaterialPageRoute(builder: (_) => LogIn());
